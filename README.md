@@ -96,8 +96,25 @@ Funcionalidades:
 
 ---
 
+### Fábrica de Estratégias — Agente de IA para Geração de Expert Advisors
+Produto da alphaQuant que permite a qualquer trader criar um EA profissional descrevendo sua estratégia em linguagem natural, sem nenhum conhecimento de programação. Um agente de IA conduz a conversa, interpreta a estratégia, monta o código MQL5 combinando os módulos do framework e entrega o arquivo compilado diretamente na pasta do MetaTrader 5 do usuário — em minutos.
+
+**Repositório:** privado (produto comercial)
+
+| Componente | Descrição |
+|---|---|
+| Agente customizado | Instruído para atuar como especialista em estratégias de trading, conduz entrevista estruturada em português natural, valida entradas e gera o EA |
+| Framework modular | 21 bibliotecas compiladas independentes (.ex5) cobertas por APIs documentadas (.mqh) |
+| Templates parametrizados | `ModularEA_Template_v2` e `v3` — base que o agente preenche conforme a estratégia do cliente |
+| APIs de integração | 21 arquivos `.mqh` documentando cada módulo: `OrderManagerAPI`, `RiskManagerAPI`, `TriggerSystemAPI`, etc. |
+| Entrega automatizada | O agente salva o `.mq5` diretamente na pasta de Experts do MT5 do usuário via filesystem |
+
+O EA entregue inclui automaticamente: gestão de risco completa (drawdown, exposição, horários), logging estruturado, recuperação de erros, trailing stop, OCO e todos os módulos relevantes à estratégia descrita.
+
+---
+
 ### Framework de Expert Advisors — alphaQuant (MQL5)
-Sistema modular de componentes para MetaTrader 5, base de todos os EAs de produção desenvolvidos para traders e fundos.
+Sistema modular de componentes para MetaTrader 5, base de todos os EAs de produção desenvolvidos para traders e fundos — e fundação técnica da Fábrica de Estratégias.
 
 **Repositórios:** privados (NDA + segredo comercial)
 
